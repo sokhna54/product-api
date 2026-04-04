@@ -20,7 +20,7 @@
     </properties>
 
     <dependencies>
-        <!-- product-core depuis Nexus -->
+        <!-- product-core depuis GitHub Packages -->
         <dependency>
             <groupId>sn.isi.l3gl.core</groupId>
             <artifactId>product-core</artifactId>
@@ -69,10 +69,11 @@
         </dependency>
     </dependencies>
 
+    <!-- GitHub Packages pour télécharger product-core -->
     <repositories>
         <repository>
-            <id>nexus</id>
-            <url>http://localhost:8081/repository/maven-public/</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/sokhna54/product-core</url>
         </repository>
     </repositories>
 
