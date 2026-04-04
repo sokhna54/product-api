@@ -10,6 +10,8 @@ test:
   stage: test
   image: maven:3.9.5-eclipse-temurin-21
   script:
+    - mkdir -p ~/.m2
+    - echo "<settings><servers><server><id>github</id><username>sokhna54</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
     - mvn test -Dmaven.test.failure.ignore=true
   allow_failure: true
 
@@ -17,6 +19,8 @@ build:
   stage: build
   image: maven:3.9.5-eclipse-temurin-21
   script:
+    - mkdir -p ~/.m2
+    - echo "<settings><servers><server><id>github</id><username>sokhna54</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
     - mvn clean package -DskipTests
   artifacts:
     paths:
